@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" onresize="rePage()">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galaxy</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="carousel.css"> -->
+  <link href='https://css.gg/crowdfire.css' rel='stylesheet'>
+  <style>
+    html,
+    body {
+      margin: 0px;
+      background: #000;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body data-theme="green" onresize="rePage()">
+  <canvas class="cont" id="canvas" width="100vh" height="100vh"></canvas>
+  <div class="test">
+    <div id="my-custom-grid-wrapper" class="">
+      <div id="theme-picker" class="bg general theme-picker">
+        <button class="theme-picker-button font-0" style="--theme-color: pink;" onclick="color('pink')"> pink </button>
+        <button class="theme-picker-button font-0" style="--theme-color: green;" onclick="color('green')"> green </button>
+        <button class="theme-picker-button font-0" style="--theme-color: orange;" onclick="color('orange')"> orange </button>
+        <button class="theme-picker-button font-0" style="--theme-color: blue;" onclick="color('blue')"> blue </button>
+        <button class="theme-picker-button font-0" style="--theme-color: violet;" onclick="color('violet')"> violet </button>
+        <button class="theme-picker-button font-0" style="--theme-color: turquoise;" onclick="color('turquoise')"> turquoise </button>
+        <button class="theme-picker-button font-0" style="--theme-color: red;" onclick="color('red')"> red </button>
+        <button class="theme-picker-button font-0" style="--theme-color: yellow;" onclick="color('yellow')"> yellow </button>
+        <button class="theme-picker-button font-0" style="--theme-color: white;" onclick="color('white')"> white </button>
+
+      </div>
+      <div id="side-bar-picker" class="bg general side-bar-picker">
+        <!-- Github? -->
+        <button class="sidebar-button font-0">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.325 3.05011L8.66741 20.4323L10.5993 20.9499L15.2568 3.56775L13.325 3.05011Z"
+              fill="currentColor" />
+            <path
+              d="M7.61197 18.3608L8.97136 16.9124L8.97086 16.8933L3.87657 12.1121L8.66699 7.00798L7.20868 5.63928L1.04956 12.2017L7.61197 18.3608Z"
+              fill="currentColor" />
+            <path
+              d="M16.388 18.3608L15.0286 16.9124L15.0291 16.8933L20.1234 12.1121L15.333 7.00798L16.7913 5.63928L22.9504 12.2017L16.388 18.3608Z"
+              fill="currentColor" />
+          </svg>
+        </button>
+        <!-- About me -->
+        <button class="sidebar-button font-0">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7ZM14 7C14 8.10457 13.1046 9 12 9C10.8954 9 10 8.10457 10 7C10 5.89543 10.8954 5 12 5C13.1046 5 14 5.89543 14 7Z"
+              fill="currentColor" />
+            <path
+              d="M16 15C16 14.4477 15.5523 14 15 14H9C8.44772 14 8 14.4477 8 15V21H6V15C6 13.3431 7.34315 12 9 12H15C16.6569 12 18 13.3431 18 15V21H16V15Z"
+              fill="currentColor" />
+          </svg>
+        </button>
+        <!-- Random Project of mine? -->
+        <button class="sidebar-button font-0">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17.2 14.9431C16.0954 14.9431 15.2 15.8385 15.2 16.9431C15.2 18.0477 16.0954 18.9431 17.2 18.9431C18.3045 18.9431 19.2 18.0477 19.2 16.9431C19.2 15.8385 18.3045 14.9431 17.2 14.9431Z"
+              fill="currentColor" />
+            <path
+              d="M5.05518 7.05518C5.05518 5.95061 5.95061 5.05518 7.05518 5.05518C8.15975 5.05518 9.05518 5.95061 9.05518 7.05518C9.05518 8.15975 8.15975 9.05518 7.05518 9.05518C5.95061 9.05518 5.05518 8.15975 5.05518 7.05518Z"
+              fill="currentColor" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M4 1C2.34315 1 1 2.34315 1 4V20C1 21.6569 2.34315 23 4 23H20C21.6569 23 23 21.6569 23 20V4C23 2.34315 21.6569 1 20 1H4ZM20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4C21 3.44772 20.5523 3 20 3Z"
+              fill="currentColor" />
+          </svg>
+        </button>
+        <!-- nothing as of this far -->
+        <button class="sidebar-button font-0">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M17.9513 15.571C17.7695 17.2187 16.9205 18.6654 15.6805 19.635C15.332 20.4692 14.7092 21.1601 13.9247 21.5951C13.7025 22.4574 12.9196 23.0944 11.9879 23.0944C11.0562 23.0944 10.2733 22.4574 10.0511 21.5951C9.26672 21.1602 8.64392 20.4693 8.29547 19.6353C7.05955 18.6691 6.21203 17.229 6.02621 15.5883C4.93527 16.4161 3.37955 16.4118 2.28618 15.4944C1.01696 14.4294 0.851409 12.5371 1.91641 11.2679L6.00966 6.38975C6.27125 3.31753 8.84785 0.905579 11.9878 0.905579C15.1166 0.905579 17.6861 3.30046 17.9631 6.35711L22.0837 11.2679C23.1487 12.5371 22.9831 14.4294 21.7139 15.4944C20.613 16.4182 19.0433 16.4161 17.9513 15.571ZM15.6254 12.9056L13.9472 10.9056H10.0529L8.37467 12.9056H15.6254ZM17.9878 12.6095L19.0195 13.839C19.3745 14.2621 20.0053 14.3173 20.4283 13.9623C20.8514 13.6073 20.9066 12.9765 20.5516 12.5535L17.9878 9.49803V12.6095ZM15.9878 8.90558V6.90558C15.9878 4.69644 14.1969 2.90558 11.9878 2.90558C9.77865 2.90558 7.98779 4.69644 7.98779 6.90558V8.90558H15.9878ZM4.98059 13.839L5.98779 12.6387V9.52726L3.4485 12.5535C3.0935 12.9765 3.14869 13.6073 3.57176 13.9623C3.99483 14.3173 4.62559 14.2621 4.98059 13.839ZM11.9878 18.9056C9.77865 18.9056 7.98779 17.1147 7.98779 14.9056H15.9878C15.9878 17.1147 14.1969 18.9056 11.9878 18.9056Z"
+              fill="currentColor" />
+          </svg>
+        </button>
+        <!-- Brackis -->
+        <button class="sidebar-button font-0">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 7V9H9V15H11V17H7V7H11Z" fill="currentColor" />
+            <path d="M15 15H13V17H17V7H13V9H15V15Z" fill="currentColor" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6ZM6 5H18C18.5523 5 19 5.44772 19 6V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18V6C5 5.44772 5.44772 5 6 5Z"
+              fill="currentColor" />
+          </svg>
+        </button>
+
+      </div>
+      <div id="search-section" class="bg general search-section">
+        <input type="text" class="search-box" placeholder="Looking for something?" />
+      </div>
+      <div id="view-section" class="bg general view-section">
+        <div class="slider-content">
+          <div class="carousel">
+            <input type="radio" class="radio" id="page1cb" checked name="pages" />
+            <input type="radio" class="radio" id="page2cb" name="pages" />
+            <input type="radio" class="radio" id="page3cb" name="pages" />
+            <input type="radio" class="radio" id="page4cb" name="pages" />
+            <input type="radio" class="radio" id="page5cb" name="pages" />
+            <!-- page 1 -->
+            <page id="page1">
+              <div class="card-1"><img src="https://via.placeholder.com/150" alt=""></div>
+              <label for="page2cb" title="Start"><b>START</b></label>
+            </page>
+            <!-- page 2 -->
+            <page id="page2">
+              <div class="card-2"><img src="https://via.placeholder.com/150" alt=""></div>
+              <label for="page3cb" title="Next"><b>NEXT</b></label>
+            </page>
+            <!-- page 3 -->
+            <page id="page3">
+              <div class="card-3"><img src="https://via.placeholder.com/150" alt=""></div>
+              <label for="page4cb" title="Next"><b>NEXT</b></label>
+            </page>
+            <!-- page 4 -->
+            <page id="page4">
+              <div class="card-4"><img src="https://via.placeholder.com/150" alt=""></div>
+              <label for="page5cb" title="Next"><b>NEXT</b></label>
+            </page>
+            <!-- page 5 -->
+            <page id="page5">
+              <div class="card-5"><img src="https://via.placeholder.com/150" alt=""></div>
+              <label for="page1cb" title="Again"><b>NEXT</b></label>
+            </page>
+          </div>
+        </div>
+      </div>
+      <div id="project-slider-section" class="bg general project-slider-section">
+        💈
+      </div>
+      <div id="experiment-section" class="bg general experiment-section">
+        🧪
+      </div>
+      <div id="shape-picker" class="bg general shape-picker">
+        🔼
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="color.js"></script>
+</body>
+</body>
+
+</html>
+<!-- <section id="hero">
+    <div class="intro">
+        <i class="fa fa-code" aria-hidden="true"></i>
+        <h1>Hey! I'm <span>Sonny</span>.</h1>
+        <p>I build and code beautiful, interactive, <br /> and responsive websites.<br /></p>
+        <i class="fa fa-code" aria-hidden="true"></i>
+    </div>
+</section>-->

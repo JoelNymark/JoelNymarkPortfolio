@@ -1,0 +1,73 @@
+.slider-content {
+    display: grid;
+    justify-content: center;
+    height: 20rem;
+}
+
+.carousel {
+    width: 20rem;
+    text-align: center;
+    font-family: Trebuchet MS;
+    font-size: 2rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fill);
+    align-items: center;
+    justify-items: center;
+}
+
+.card-1{
+    background-color: pink;
+    border-radius: 10px;
+}
+.card-2{
+    background-color: orange;
+    border-radius: 10px;
+}
+.card-3{
+    background-color: green;
+    border-radius: 10px;
+}
+.card-4{
+    background-color: red;
+    border-radius: 10px;
+}
+.card-5{
+    background-color: blue;
+    border-radius: 10px;
+}
+
+.radio{
+    display: none;
+}
+.carousel page {
+    position: absolute;
+    transition: transform 0.4s;
+    transform: scale(0);
+}
+.carousel page div {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+}
+.carousel page label {
+    cursor: pointer;
+    background: #d9ff4f;
+    border-radius: 10px;
+    padding: .5rem 1em;
+}
+.carousel #page1cb:checked ~ #page1 {
+    transform: scale(1);
+}
+.carousel #page2cb:checked ~ #page2 {
+    transform: scale(1);
+}
+.carousel #page3cb:checked ~ #page3 {
+    transform: scale(1);
+}
+.carousel #page4cb:checked ~ #page4 {
+    transform: scale(1);
+}
+.carousel #page5cb:checked ~ #page5 {
+    transform: scale(1);
+}
