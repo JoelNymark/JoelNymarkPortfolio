@@ -9,3 +9,11 @@ function color(color) {
     document.documentElement.setAttribute('data-theme', color)
     localStorage.setItem('theme', color);
 };
+
+
+
+
+window.addEventListener('load', (event) => {
+    const loader = document.getElementById("loader");
+    loader.setAttribute("class","loader-hidden")
+  });
