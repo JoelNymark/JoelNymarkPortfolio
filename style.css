@@ -416,7 +416,7 @@ input[type="radio"] {
   appearance: none;
   /* Safari support */
   -webkit-appearance: none;
-  border: 0.1rem solid rgba(var(--bg-color-radio), 1);
+  /* border: 0.1rem solid rgba(var(--bg-color-radio), 1) */
   background-color: var(--bg-color);
   border-radius: 8px;
 }
