@@ -1,3 +1,13 @@
+const root = document.querySelector(":root"),
+      inputs = document.querySelectorAll("input[name='theme']")
+
+for(const input of inputs){
+    input.onchange = e => {
+        root.style.setProperty("--theme-color", `var(--${input.value})`);
+        console.log(input.value);
+    }
+}
+
 function color(color) {
 
     console.log(color);
@@ -13,7 +23,7 @@ function color(color) {
 
 
 
-window.addEventListener('load', (event) => {
-    const loader = document.getElementById("loader");
-    loader.setAttribute("class","loader-hidden")
-  });
+// window.addEventListener('load', (event) => {
+//     const loader = document.getElementById("loader");
+//     loader.setAttribute("class","loader-hidden")
+//   });
